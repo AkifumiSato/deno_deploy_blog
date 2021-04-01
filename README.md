@@ -1,2 +1,5 @@
 # deno_markdown_docs
-TBW
+
+```
+deployctl run --watch --no-check ./main.tsx
+```
