@@ -11,8 +11,7 @@ const handlePostRequest = async (
   request: Request,
   { date, title }: { date: string; title: string },
 ) => {
-  const markdown = await Deno.readTextFile(`./.post/${date}/${title}.md`);
-  console.log(markdown);
+  const markdown = await fetch(`https://raw.githubusercontent.com/AkifumiSato/deno_deploy_blog/main/.post/${date}/${title}.md`).then((res) => res.text());
   return jsx(<PostPage date={date} title={title} markdown={markdown} />);
 };
 
