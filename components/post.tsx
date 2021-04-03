@@ -9,8 +9,19 @@ type Props = {
 };
 
 export const PostPage = ({ date, title, markdown }: Props) => (
-  <div>
-    <h1>{title}</h1>
+  <div
+    style={{
+      padding: "30px",
+    }}
+  >
+    <h1
+      style={{
+        borderBottom: "2px solid #ccc",
+        paddingBottom: "10px",
+      }}
+    >
+      {title}
+    </h1>
     <p>date: {date}</p>
     <div
       dangerouslySetInnerHTML={{
