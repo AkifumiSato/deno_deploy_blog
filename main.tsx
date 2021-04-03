@@ -1,9 +1,8 @@
 import {
+  h,
   jsx,
   serve,
-  validateRequest,
 } from "https://deno.land/x/sift@0.1.7/mod.ts";
-import { h } from "https://cdn.skypack.dev/preact@10.5.13";
 import { IndexPage } from "./components/index.tsx";
 import { PostPage } from "./components/post.tsx";
 
@@ -11,7 +10,9 @@ const handlePostRequest = async (
   request: Request,
   { date, title }: { date: string; title: string },
 ) => {
-  const markdown = await fetch(`https://raw.githubusercontent.com/AkifumiSato/deno_deploy_blog/main/.post/${date}/${title}.md`).then((res) => res.text());
+  const markdown = await fetch(
+    `https://raw.githubusercontent.com/AkifumiSato/deno_deploy_blog/main/.post/${date}/${title}.md`,
+  ).then((res) => res.text());
   return jsx(<PostPage date={date} title={title} markdown={markdown} />);
 };
 
