@@ -7,7 +7,7 @@ tasks:
       export DENO_INSTALL="/home/gitpod/.deno" &&
       export PATH="$DENO_INSTALL/bin:$PATH" &&
       deno install --allow-read --allow-write --allow-env --allow-net --allow-run --no-check -f https://deno.land/x/deploy/deployctl.ts &&
-      deployctl run --watch ./main.ts
+      deployctl run --watch --no-check /workspace/main.tsx
 vscode:
   extensions:
     - denoland.vscode-deno@3.2.0:Uwf/jB20dfIdQC0JrEprsw==
